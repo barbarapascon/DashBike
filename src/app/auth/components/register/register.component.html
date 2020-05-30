@@ -2,7 +2,8 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-4">
         <h3>Register New Employer</h3>
-        <form >
+        <form  #f="ngForm"
+        (ngSubmit)="onSubmit(f)">
             <div class="form-group">
                 <label for="registerUsername">Username</label>
                 <input type="text"
@@ -37,6 +38,7 @@
                        placeholder="Password">
             </div>
             <button type="submit"
+            [disabled]="f.invalid"
                     class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
         </form>
     </div>

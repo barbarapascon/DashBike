@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(f: NgForm) {}
-
+  onSubmit(f: NgForm) {
+    console.log(f.value);  // { first: '', last: '' }
+    console.log(f.valid);  // false
+  }
+    
 }
