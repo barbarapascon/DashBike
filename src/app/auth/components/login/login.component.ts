@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,24 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+  
+    const loginObserver = {
+      next: x => {
+        console.log('User logged in');
+        console.log("logado");
+      },
+      error: err => {
+        console.log(err);console.log("nao logou");
+      }
+    };
+    this.authService.login(f.value).subscribe(loginObserver);
+
   }
-    
+
 }
