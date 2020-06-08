@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     
       }
     };
-    this.authService.register(f.value).subscribe(registerObserver);
+    this.authService.register(f.value);
   }
 
 }

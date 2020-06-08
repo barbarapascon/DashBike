@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatAccordion } from '@angular/material';
 
 @Component({
   selector: 'app-posts',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   constructor() { }
 
   ngOnInit(): void {
