@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     DefaultModule,
     AuthModule,
     HttpClientModule,
-    
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
