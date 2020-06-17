@@ -4,11 +4,11 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42a948; /* green */
+  border-left: 5px solid #FDFF6A; /* green */
 }
 
 .ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
+  border-left: 5px solid #FFA36A; /* red */
 }
 
 html,
@@ -19,8 +19,8 @@ body {
 }
 
 body {
-  background-image: url("https://i.imgur.com/XjzxO9D.png");
-  //background-color: #009598;
+  background: url(https://i.ibb.co/2WNjwZ7/XjzxO9D.png), linear-gradient(to bottom right, #A258C7 0%, #51C3AA 100%);
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
