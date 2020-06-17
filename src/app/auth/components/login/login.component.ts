@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/'], 
           {queryParams: data});
           console.log(data);
-          
+          return data
       },
       error => {
           console.log(error);
