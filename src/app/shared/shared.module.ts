@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule, MatExpansionModule } from '@angular/material';
+import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule, MatExpansionModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { AreaComponent } from './widget/area/area.component';
@@ -34,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     HighchartsChartModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
     
   ],
   exports:[

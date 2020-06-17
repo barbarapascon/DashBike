@@ -27,6 +27,7 @@ export class AuthService {
           localStorage.setItem("user", JSON.stringify(user.userToReturn));
           this.decodedToken = this.helper.decodeToken(user.token);
           this.currentUser = user.userToReturn;
+          return user;
         }
       })
     );
