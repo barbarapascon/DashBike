@@ -1,9 +1,6 @@
-<div class="example-action-buttons">
-    <button mat-button (click)="accordion.openAll()">Expandir</button>
-    <button mat-button (click)="accordion.closeAll()">Fechar</button>
-  </div>
-  <mat-accordion *ngFor="let bikes of bikes.bikes" class="example-headers-align" multi>
-    <mat-expansion-panel>
+
+  <mat-accordion *ngFor="let bikes of bikes.bikes" class="example-headers-align" style="background-color:#A258C7;" multi>
+    <mat-expansion-panel style="background-color:#A258C7;">
       <mat-expansion-panel-header>
         <mat-panel-title>
           
