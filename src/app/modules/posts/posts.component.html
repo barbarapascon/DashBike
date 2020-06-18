@@ -2,14 +2,15 @@
     <button mat-button (click)="accordion.openAll()">Expandir</button>
     <button mat-button (click)="accordion.closeAll()">Fechar</button>
   </div>
-  <mat-accordion class="example-headers-align" multi>
+  <mat-accordion *ngFor="let bike of bikes" class="example-headers-align" multi>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          ID:09999 
+          
+          {{bike.id}}
         </mat-panel-title>
         <mat-panel-description>
-          BICICLETA PEDALLA 4
+         {{bike.modelo}} {{bike.fabricante}}
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -28,27 +29,5 @@
   
    
   
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          ID:09999 
-        </mat-panel-title>
-        <mat-panel-description>
-          BICICLETA PEDALLA 4
-          <mat-icon>account_circle</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
   
-    
-        <div>
-          <app-widget-area></app-widget-area>
-      </div>
-      
-   
-        <div>
-          <app-widget-area></app-widget-area>
-      </div>
-  
-  
-    </mat-expansion-panel>
   </mat-accordion>
