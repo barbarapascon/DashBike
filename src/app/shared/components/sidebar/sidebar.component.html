@@ -9,24 +9,36 @@
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+    <h2 matSubheader>Páginas</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Historico</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Artigos</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+        <span class="material-icons" style="color: #FFA36A; padding-right: 5px;">dashboard</span>
+        Dashboard
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">
+        <span class="material-icons" style="color: #FFA36A; padding-right: 5px;">update</span>
+        Histórico
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">
+        <span class="material-icons" style="color: #FFA36A; padding-right: 5px;">description</span>
+        Artigos
+    </a>
 
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Ferramentas</h2>
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>import_contacts</mat-icon>
-        Contato
+        <span class="material-icons" style="color: #FFA36A; padding-right: 5px;">supervisor_account</span>
+        Contatos
     </a>
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon>
+        <span class="material-icons" style="color: #FFA36A; padding-right: 5px;">contact_phone</span>
         Leads
     </a>
+
 
 </mat-nav-list>
