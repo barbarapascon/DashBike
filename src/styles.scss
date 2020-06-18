@@ -19,10 +19,11 @@ body {
 }
 
 body {
-  background: url(https://i.ibb.co/Jc73ZWc/bg2.png), linear-gradient(to bottom right, #FFFFFF 0%, #FFFFFF 100%);
+  background:linear-gradient(to bottom right, #FFFFFF 0%, #FFFFFF 100%);
+  background-image:  url(bgfinal2.png), ;
   background-attachment: fixed;
   background-position: center;
-  background-size: contain; 
+  background-size: conver; 
   background-repeat: no-repeat;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
