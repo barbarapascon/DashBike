@@ -16,7 +16,16 @@ export class BikeService {
   }
 
   getBikes(token): Observable<Bike[]> {
-    return this.httpClient.get<Bike[]>(this.bikeUrl)
+
+   
+      var reqHeader = new HttpHeaders({ 
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+       });
+  
+
+
+    return this.httpClient.get<Bike[]>(this.bikeUrl,{ headers: reqHeader })
       .pipe(
         retry(2),
         catchError(this.handleError))

@@ -24,7 +24,9 @@ export class PostsComponent implements OnInit {
   getBikes() {
     this.bikeService.getBikes(this.currentUser.token).subscribe((bikes: Bike[]) => {
       this.bikes = bikes;
+      console.log(this.bikes);
     });
+   
   }
 
 }

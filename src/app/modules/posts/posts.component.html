@@ -2,16 +2,17 @@
     <button mat-button (click)="accordion.openAll()">Expandir</button>
     <button mat-button (click)="accordion.closeAll()">Fechar</button>
   </div>
-  <mat-accordion *ngFor="let bike of bikes" class="example-headers-align" multi>
+  <mat-accordion *ngFor="let bikes of bikes.bikes" class="example-headers-align" multi>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
           
-          {{bike.id}}
+          {{bikes.id}}
         </mat-panel-title>
         <mat-panel-description>
-         {{bike.modelo}} {{bike.fabricante}}
-          <mat-icon>account_circle</mat-icon>
+         modelo: {{bikes.modelo}}   fabricante: {{bikes.fabricante}}
+         
+          <i class="fas fa-biking"></i>
         </mat-panel-description>
       </mat-expansion-panel-header>
   
