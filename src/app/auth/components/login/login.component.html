@@ -1,28 +1,26 @@
 <app-header></app-header>
 <div class="row">
-    <div style="padding-left: 33%;">
-        <img src="https://i.imgur.com/pWpaP3d.png" width=420 height=auto>
-        <mat-card class="box" color="rgb(29, 31, 31)" style="background:rgb(29, 31, 31);    padding: 87px;
-        border-radius: 18px; min-height: 10em;
-    display: table-cell;
-    vertical-align: middle;">
+    <div _ngcontent-ppg-c310="" style="margin-right: auto;margin-left: auto;margin-bottom: auto;padding-bottom: 20px;">
+        <div _ngcontent-yec-c310="" style="font-size: 450%;font-weight: 450;padding-top: 10%;padding-bottom: 10%;color: #A258C7;text-shadow: 3px 2px #FFA36A;">SMART BIKE</div>
+        <mat-card class="box"  style="background: white; padding: 15%; border-radius: 18px; min-height: 10em; vertical-align: middle; width: auto; margin-left: 10%; margin-right: 10%; margin-top: 2%; opacity: 100%;">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                 <div class="form-group">
-                    <label for="loginUsername">Username</label>
+                    <label for="loginUsername" style="color: black">Usuário</label>
                     <input type="text" name="username" ngModel required #username="" class="form-control"
-                        id="loginUsername" placeholder="Enter username">
+                        id="loginUsername" placeholder="Usuário">
                 </div>
                 <div class="form-group">
-                    <label for="loginPassword">Password</label>
+                    <label for="loginPassword" style="color: black;">Senha</label>
                     <input type="password" name="password" ngModel required #password="" class="form-control"
-                        id="loginPassword" placeholder="Password">
+                        id="loginPassword" placeholder="Senha">
                 </div>
                 <div class="form-group form-check">
-                    <a [routerLink]="['/reset-password']">Forgot Password</a>
+                    <a [routerLink]="['/reset-password']">Esqueci a senha</a>
                 </div>
-                <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Login <i
+                <button type="submit" [disabled]="f.invalid" class="btn btn-login">Entrar <i
                         class="fas fa-sign-in-alt"></i></button>
             </form>
         </mat-card>
     </div>
 </div>
+<app-footer></app-footer>

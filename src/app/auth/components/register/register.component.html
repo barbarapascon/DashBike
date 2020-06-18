@@ -1,45 +1,51 @@
 <app-header></app-header>
-<div class="row">
-    <div class="col-md-6 offset-md-3 mt-4">
-        <h3>Register New Employer</h3>
-        <form  #f="ngForm"
-        (ngSubmit)="onSubmit(f)">
-            <div class="form-group">
-                <label for="registerUsername">Username</label>
-                <input type="text"
-                       name="username"
-                       ngModel
-                       required
-                       #username=""
-                       class="form-control"
-                       id="registerUsername"
-                       placeholder="Enter username">
+<div _ngcontent-qfw-c310="" class="row" style="margin-bottom: 3%; margin-left: auto; margin-right: auto">
+    <div _ngcontent-bmd-c310="" _ngcontent-ppg-c310="" style="margin-right: auto; margin-left: auto; margin-bottom: auto;">
+        <div style="font-size: 450%; font-weight: 450; margin-left:auto; margin-right: auto; padding-top: 5%; padding-bottom: 5%; color: #A258C7; text-shadow: 3px 2px #FFA36A;">REGISTRAR USUÁRIO</div>
+        <div class="row" style="background: white; padding: 5%; border-radius: 18px; min-height: 10em; vertical-align: middle; width: auto; margin-left: 10%; margin-right: 10%; margin-top: 2%; opacity: 100%;">
+            <div class="col-md-6 offset-md-3 mt-4" style="width: 100%;">
+            <form  #f="ngForm"
+            (ngSubmit)="onSubmit(f)">
+                    <label for="loginPassword">Crie um usuário</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <input type="text"
+                        name="username"
+                        ngModel
+                        required
+                        #username=""
+                        class="form-control"
+                        id="registerUsername"
+                        placeholder="Usuário">
+                    </div>
+                    <label for="loginPassword">Insira um E-mail</label>
+                    <div class="form-group" style="margin-bottom: 20px">
+                        <input type="email"
+                        name="email"
+                        ngModel
+                        required
+                        #email=""
+                        class="form-control"
+                        id="registerEmail"
+                        placeholder="E-mail" style="margin-bottom: 20px">
+                    </div>
+                    <label for="loginPassword">Crie uma senha</label>
+                    <div class="form-group" style="margin-bottom: 20px">
+                        <input type="password"
+                        name="password"
+                        ngModel
+                        required
+                        #password=""
+                        class="form-control"
+                        id="registerPassword"
+                        placeholder="Senha">
+                    </div>
+                    <button type="submit"
+                    [disabled]="f.invalid"
+                            class="btn btn-register ">Registrar<i class="fas fa-sign-in-alt"></i></button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="registerEmail">Email</label>
-                <input type="email"
-                       name="email"
-                       ngModel
-                       required
-                       #email=""
-                       class="form-control"
-                       id="registerEmail"
-                       placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="registerPassword">Password</label>
-                <input type="password"
-                       name="password"
-                       ngModel
-                       required
-                       #password=""
-                       class="form-control"
-                       id="registerPassword"
-                       placeholder="Password">
-            </div>
-            <button type="submit"
-            [disabled]="f.invalid"
-                    class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
-        </form>
+        </div>
     </div>
 </div>
+
+<app-footer></app-footer>
