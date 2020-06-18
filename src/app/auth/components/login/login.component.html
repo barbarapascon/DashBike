@@ -5,19 +5,19 @@
         <mat-card class="box"  style="background: white; padding: 15%; border-radius: 18px; min-height: 10em; vertical-align: middle; width: auto; margin-left: 10%; margin-right: 10%; margin-top: 2%; opacity: 100%;">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                 <div class="form-group">
-                    <label for="loginUsername">Username</label>
+                    <label for="loginUsername" style="color: black">Usuário</label>
                     <input type="text" name="username" ngModel required #username="" class="form-control"
-                        id="loginUsername" placeholder="Enter username">
+                        id="loginUsername" placeholder="Usuário">
                 </div>
                 <div class="form-group">
-                    <label for="loginPassword">Password</label>
+                    <label for="loginPassword" style="color: black;">Senha</label>
                     <input type="password" name="password" ngModel required #password="" class="form-control"
-                        id="loginPassword" placeholder="Password">
+                        id="loginPassword" placeholder="Senha">
                 </div>
                 <div class="form-group form-check">
-                    <a [routerLink]="['/reset-password']">Forgot Password</a>
+                    <a [routerLink]="['/reset-password']">Esqueci a senha</a>
                 </div>
-                <button type="submit" [disabled]="f.invalid" class="btn btn-login">Login <i
+                <button type="submit" [disabled]="f.invalid" class="btn btn-login">Entrar <i
                         class="fas fa-sign-in-alt"></i></button>
             </form>
         </mat-card>

@@ -1,13 +1,13 @@
 <app-header></app-header>
 <div _ngcontent-qfw-c310="" class="row" style="margin-bottom: 3%; margin-left: auto; margin-right: auto">
     <div _ngcontent-bmd-c310="" _ngcontent-ppg-c310="" style="margin-right: auto; margin-left: auto; margin-bottom: auto;">
-        <div style="font-size: 450%; font-weight: 450; margin-left:auto; margin-right: auto; padding-top: 5%; padding-bottom: 5%; color: white; text-shadow: 3px 2px #FFA36A;">Registrar novo usuário</div>
+        <div style="font-size: 450%; font-weight: 450; margin-left:auto; margin-right: auto; padding-top: 5%; padding-bottom: 5%; color: white; text-shadow: 3px 2px #FFA36A;">REGISTRAR USUÁRIO</div>
         <div class="row" style="background: white; padding: 5%; border-radius: 18px; min-height: 10em; vertical-align: middle; width: auto; margin-left: 10%; margin-right: 10%; margin-top: 2%; opacity: 100%;">
             <div class="col-md-6 offset-md-3 mt-4" style="width: 100%;">
             <form  #f="ngForm"
             (ngSubmit)="onSubmit(f)">
-                    <div class="form-group">
-                        <label for="registerUsername">Username</label>
+                    <label for="loginPassword">Crie um usuário</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
                         <input type="text"
                         name="username"
                         ngModel
@@ -15,10 +15,10 @@
                         #username=""
                         class="form-control"
                         id="registerUsername"
-                        placeholder="Enter username">
+                        placeholder="Usuário">
                     </div>
-                    <div class="form-group">
-                        <label for="registerEmail">Email</label>
+                    <label for="loginPassword">Insira um E-mail</label>
+                    <div class="form-group" style="margin-bottom: 20px">
                         <input type="email"
                         name="email"
                         ngModel
@@ -26,10 +26,10 @@
                         #email=""
                         class="form-control"
                         id="registerEmail"
-                        placeholder="Enter email">
+                        placeholder="E-mail" style="margin-bottom: 20px">
                     </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Password</label>
+                    <label for="loginPassword">Crie uma senha</label>
+                    <div class="form-group" style="margin-bottom: 20px">
                         <input type="password"
                         name="password"
                         ngModel
@@ -37,11 +37,11 @@
                         #password=""
                         class="form-control"
                         id="registerPassword"
-                        placeholder="Password">
+                        placeholder="Senha">
                     </div>
                     <button type="submit"
                     [disabled]="f.invalid"
-                            class="btn btn-register ">Register <i class="fas fa-sign-in-alt"></i></button>
+                            class="btn btn-register ">Registrar<i class="fas fa-sign-in-alt"></i></button>
                 </form>
             </div>
         </div>
