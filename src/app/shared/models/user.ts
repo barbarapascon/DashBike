@@ -5,4 +5,6 @@ export interface User {
     username: string;
     senha: string;
     type: string;
+    imgBase64: string;
+    token:string;
   }
