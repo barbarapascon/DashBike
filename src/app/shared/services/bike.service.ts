@@ -3,14 +3,17 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { Bike } from '../models/bike';
 import { catchError, retry, map } from 'rxjs/operators';
+import { Corridas } from '../models/corridas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BikeService {
   bikeUrl = "https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/all";
+  corridasUrl ="https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/corrida/all"
    bikes: Bike[];
-  constructor(private httpClient: HttpClient,private bikeService: BikeService) { }
+   corridas: Corridas[];
+  constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -35,6 +38,26 @@ export class BikeService {
           }
         })
       )
+  }
+
+  getCorridas(token){
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+   });
+
+
+
+return this.httpClient.get<Corridas[]>(this.corridasUrl,{ headers: reqHeader })
+  .pipe(
+    map((response: any) => {
+      const corridas = response;
+      if (corridas) {
+        localStorage.setItem("corridas", JSON.stringify(corridas));
+        return corridas;
+      }
+    })
+  )
   }
 
   handleError(error: HttpErrorResponse) {
