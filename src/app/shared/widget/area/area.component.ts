@@ -31,7 +31,7 @@ export class AreaComponent implements OnInit {
         gridLineColor: '#707073',
         labels: {
           style: {
-            color: '#E0E0E3'
+            color: '#7b1fa2'
           }
         },
         lineColor: '#707073',
@@ -86,7 +86,7 @@ export class AreaComponent implements OnInit {
       legend: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         itemStyle: {
-          color: '#E0E0E3'
+          color: '#7b1fa2'
         },
         itemHoverStyle: {
           color: '#FFF'
@@ -121,16 +121,15 @@ export class AreaComponent implements OnInit {
           }
         }
       },
-      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
-        '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
-      chart: {
+      colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee',
+      '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+  chart: {
         type: 'area',
-        backgroundColor: {
-          linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-          stops: [
-            [0, '#2a2a2b'],
-            [1, '#3e3e40']
-          ]
+        backgroundColor:  {
+          backgroundColor: 'white',
+          style: {
+              fontFamily: 'Signika, serif'
+          }
         },
         style: {
           fontFamily: '\'Unica One\', sans-serif'
@@ -140,7 +139,7 @@ export class AreaComponent implements OnInit {
       title: {
         text: 'Crescimento da quantidade de Bikes',
         style: {
-          color: '#E0E0E3',
+          color: '#7b1fa2',
           textTransform: 'uppercase',
           fontSize: '20px'
         }
