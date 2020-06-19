@@ -1,5 +1,5 @@
 
-  <mat-accordion *ngFor="let bikes of bikes.bikes" class="example-headers-align" style="background-color:#A258C7;" multi>
+  <mat-accordion *ngFor="let bikes of currentBikes.bikes" class="example-headers-align" style="background-color:#A258C7;" multi>
     <mat-expansion-panel style="background-color:#A258C7;">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -14,7 +14,15 @@
       </mat-expansion-panel-header>
   
      
-        <div  fxLayoutAlign="space-between center" fxLayoutGap="10px" fyLayoutGap="10px" class="stats-cards">
+        <div   style="background-color: white;" fxLayoutAlign="space-between center" fxLayoutGap="10px" fyLayoutGap="10px" class="stats-cards">
+          <div style="color:#A258C7;
+          margin-left: 9px;">
+            <h2>trancado: {{bikes.locked}}</h2>
+            <h2>peso maximo: {{bikes.pesoMax}}</h2>
+            <h2>velocidade maxima: {{bikes.velMax}}</h2>
+            <h2>velocidade atual: {{bikes.speed}}</h2>
+            <h2>peso: {{bikes.peso}}</h2>
+          </div>
           <app-widget-area fxFlex="25" fyFlex="25" ></app-widget-area>
           <app-widget-area fxFlex="25" fyFlex="25"></app-widget-area>
           <app-widget-area fxFlex="25" fyFlex="25"></app-widget-area>

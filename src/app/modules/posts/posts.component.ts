@@ -11,22 +11,18 @@ import { User } from 'src/app/shared/models/user';
 })
 export class PostsComponent implements OnInit {
   currentUser: User;
-  bike = {} as Bike;
-  bikes: Bike[];
+  
+  currentBikes: Bike[];
   
   @ViewChild(MatAccordion) accordion: MatAccordion;
-  constructor(private bikeService: BikeService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.currentUser = JSON.parse(localStorage.getItem('user'))
-    this.getBikes();
-  }
-  getBikes() {
-    this.bikeService.getBikes(this.currentUser.token).subscribe((bikes: Bike[]) => {
-      this.bikes = bikes;
-      console.log(this.bikes);
-    });
-   
+    
+    this.currentBikes =JSON.parse(localStorage.getItem('bikes'));
+
+    console.log(this.currentBikes);
   }
 
 }

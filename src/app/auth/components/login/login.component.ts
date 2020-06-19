@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { User } from 'src/app/shared/models/user';
 import { Router } from '@angular/router';
+import { BikeService } from 'src/app/shared/services/bike.service';
+import { Bike } from 'src/app/shared/models/bike';
 
 
 @Component({
@@ -13,7 +15,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   currentUser: User;
   returnUrl: string;
-  constructor(private authService: AuthService, private router: Router) { }
+  bikes: Bike[];
+  constructor(private authService: AuthService, private router: Router,private bikeService: BikeService) { }
 
   ngOnInit() {
   }
@@ -39,6 +42,14 @@ export class LoginComponent implements OnInit {
       error => {
           console.log(error);
       });
+   
+        this.bikeService.getBikes(this.currentUser.token).subscribe((bikes: Bike[]) => {
+         
+          console.log("bikes do login: "+ bikes);
+          
+        });
+       
+      
     console.log("objeto hehe");
     console.log(loginObserver);
 

@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Bike } from '../models/bike';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BikeService {
   bikeUrl = "https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/all";
-
-  constructor(private httpClient: HttpClient) { }
+   bikes: Bike[];
+  constructor(private httpClient: HttpClient,private bikeService: BikeService) { }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -23,12 +23,18 @@ export class BikeService {
           'Authorization': 'Bearer ' + token
        });
   
-
+    
 
     return this.httpClient.get<Bike[]>(this.bikeUrl,{ headers: reqHeader })
       .pipe(
-        retry(2),
-        catchError(this.handleError))
+        map((response: any) => {
+          const bikes = response;
+          if (bikes) {
+            localStorage.setItem("bikes", JSON.stringify(bikes));
+            return bikes;
+          }
+        })
+      )
   }
 
   handleError(error: HttpErrorResponse) {
