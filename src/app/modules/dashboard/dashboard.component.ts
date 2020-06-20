@@ -26,8 +26,8 @@ export class DashboardComponent implements OnInit {
     this.currentCorridas =JSON.parse(localStorage.getItem('corridas'));
     
     console.log(this.currentUser);
-    console.log(this.currentBikes.bikes);
-    console.log(this.currentCorridas.corridas);
+    console.log(this.currentBikes);
+    console.log(this.currentCorridas);
   }
  
 

@@ -1,6 +1,7 @@
 export interface Bike {
     id: string,
     modelo: string,
+    bikes: Bike[],
     fabricante: string,
     velMax: string,
     autonomia: string,
