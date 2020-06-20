@@ -1,16 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+@import url(//db.onlinewebfonts.com/c/7bf226306214181d5e917ed5bda2301c?family=Norwester);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #159A7C; /* green */
 }
-
+@font-face {font-family: "Norwester"; 
+  src: url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.eot"); 
+  src: url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.eot?#iefix") format("embedded-opentype"), 
+  url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.woff2") format("woff2"),
+   url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.woff") format("woff"), 
+   url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.ttf") format("truetype"), 
+   url("//db.onlinewebfonts.com/t/7bf226306214181d5e917ed5bda2301c.svg#Norwester") format("svg"); }
 .ng-invalid:not(form)  {
   border-left: 5px solid #EF6F20; /* red */
 }
-
+body { margin: 0; font-family: Norwester, "Norwester", Georgia, 'Times New Roman', Times, serif; }
 html,
 body {
   height: 100%;
@@ -26,7 +35,7 @@ body {
   background-size: cover; 
   background-repeat: no-repeat;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Norwester', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .app-header {
@@ -104,6 +113,7 @@ body {
 
 .login-wrapper .mat-card {
   padding: 40px 70px 50px;
+  background: white;
 }
 
 .login-wrapper .mat-stroked-button {

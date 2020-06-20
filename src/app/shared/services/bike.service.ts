@@ -33,7 +33,7 @@ export class BikeService {
         map((response: any) => {
           const bikes = response;
           if (bikes) {
-            localStorage.setItem("bikes", JSON.stringify(bikes));
+            localStorage.setItem("bikes", JSON.stringify(bikes.bikes));
             return bikes;
           }
         })
@@ -52,8 +52,8 @@ return this.httpClient.get<Corridas[]>(this.corridasUrl,{ headers: reqHeader })
   .pipe(
     map((response: any) => {
       const corridas = response;
-      if (corridas) {
-        localStorage.setItem("corridas", JSON.stringify(corridas));
+      if (corridas.status) {
+        localStorage.setItem("corridas", JSON.stringify(corridas.corridas));
         return corridas;
       }
     })

@@ -17,14 +17,21 @@ export class DashboardComponent implements OnInit {
   currentUser: User;
   currentBikes: Bike[];
   currentCorridas: Corridas[];
+  quantidadeBikesBloqueadas : any;
+  bikes: Bike;
 
   ngOnInit(): void {
    
     this.currentUser =JSON.parse(localStorage.getItem('user'));
     this.currentBikes =JSON.parse(localStorage.getItem('bikes'));
-
+    this.quantidadeBikesBloqueadas=0;
     this.currentCorridas =JSON.parse(localStorage.getItem('corridas'));
-    
+    if(this.currentBikes){
+      this.currentBikes.forEach(element => {
+        if(element.locked == true)
+        this.quantidadeBikesBloqueadas++;
+      });
+    }
     console.log(this.currentUser);
     console.log(this.currentBikes);
     console.log(this.currentCorridas);
