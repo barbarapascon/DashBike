@@ -3,6 +3,7 @@ import { User } from 'src/app/shared/models/user';
 import { Bike } from 'src/app/shared/models/bike';
 import { BikeService } from 'src/app/shared/services/bike.service';
 import { Corridas } from 'src/app/shared/models/corridas';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-default',
@@ -15,7 +16,7 @@ export class DefaultComponent implements OnInit {
   currentUser: User;
   bikes: Bike[];
   corridas: Corridas[];
-  constructor(private bikeService: BikeService) { }
+  constructor(private bikeService: BikeService, private authService: AuthService) { }
 
   ngOnInit() { 
     this.currentUser = JSON.parse(localStorage.getItem('user'))
@@ -30,6 +31,12 @@ export class DefaultComponent implements OnInit {
 
       console.log("corridas do defaut: " + corridas);
       console.log(corridas);
+
+    });
+    this.authService.getUsers(this.currentUser.token).subscribe((users: User[]) => {
+
+      console.log("users do defaut: " + users);
+      console.log(users);
 
     });
   }

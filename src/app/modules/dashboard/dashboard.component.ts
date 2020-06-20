@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   currentUser: User;
   currentBikes: Bike[];
   currentCorridas: Corridas[];
+  currentUsers: User[];
   quantidadeBikesBloqueadas : any;
   bikes: Bike;
 
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
     this.currentBikes =JSON.parse(localStorage.getItem('bikes'));
     this.quantidadeBikesBloqueadas=0;
     this.currentCorridas =JSON.parse(localStorage.getItem('corridas'));
+    this.currentUsers =JSON.parse(localStorage.getItem('users'));
     if(this.currentBikes){
       this.currentBikes.forEach(element => {
         if(element.locked == true)

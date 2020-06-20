@@ -3,19 +3,42 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { User } from "../models/user";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
   authUrl = "https://apitccsmartbike20200527201546.azurewebsites.net/api/account/authenticate";
-
+ usuarioUrl="https://apitccsmartbike20200527201546.azurewebsites.net/api/user/getall";
   helper = new JwtHelperService();
   decodedToken: any;
   currentUser: User;
 
-  constructor(private http: HttpClient) {}
 
+  constructor(private http: HttpClient) {}
+  getUsers(token): Observable<User[]> {
+
+   
+    var reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+     });
+
+  
+
+  return this.http.get<User[]>(this.usuarioUrl,{ headers: reqHeader })
+    .pipe(
+      map((response: any) => {
+        const users = response;
+        if (users) {
+          localStorage.setItem("users", JSON.stringify(users));
+          console.log(users);
+          return users;
+        }
+      })
+    )
+}
   login(model: any) {
     model.type = "admin";
     return this.http.post(this.authUrl , model).pipe(
