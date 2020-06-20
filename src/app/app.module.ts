@@ -8,6 +8,7 @@ import { DefaultModule } from './layouts/default/default.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatCardModule } from '@angular/material';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [

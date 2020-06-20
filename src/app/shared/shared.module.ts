@@ -11,6 +11,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widget/card/card.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MapsComponent } from './widget/maps/maps.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
     FooterComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent
+    CardComponent,
+    MapsComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +38,10 @@ import { MatInputModule } from '@angular/material/input';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAqlScu6iS83TvJOZ3JSJMBZHBAPgATEzQ'
+    })
     
   ],
   exports:[
@@ -43,7 +49,8 @@ import { MatInputModule } from '@angular/material/input';
     FooterComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent
+    CardComponent,
+    MapsComponent
   ]
 })
 export class SharedModule { }

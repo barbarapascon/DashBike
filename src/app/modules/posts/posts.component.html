@@ -9,15 +9,25 @@
         <mat-panel-description>
          modelo: {{bikes.modelo}}   fabricante: {{bikes.fabricante}}
          
-          <i class="fas fa-biking"></i>
+          <span class="material-icons" style="color: #51C3AA; padding-right: 5px;">directions_bike</span>
         </mat-panel-description>
       </mat-expansion-panel-header>
   
-     
-        <div   style="background-color: white;" fxLayoutAlign="space-between center" fxLayoutGap="10px" fyLayoutGap="10px" class="stats-cards">
-          <div style="color:#A258C7;
-          margin-left: 9px;">
-            <h2>Trancado: {{bikes.locked}}</h2>
+    <div style="background-color: white; padding: 3%;" fxLayoutAlign="space-between center" fxLayoutGap="10px"
+      fyLayoutGap="10px" class="stats-cards">
+      <div style="color:#A258C7;
+              margin-left: 9px;">
+        <div>
+          <h1 *ngIf="!bikes.locked">
+            <span class="material-icons" style="color: #51C3AA; padding-right: 5px; font-size: 55px;">lock_open</span>
+            Bike desbloqueada
+          </h1>
+          <h1 *ngIf="bikes.locked">
+            <span class="material-icons" style="color: #51C3AA; padding-right: 5px;font-size: 55px;">lock</span>
+            Bike bloqueada
+          </h1>
+        </div>
+
             <h2>Peso: {{bikes.peso}}</h2>  
             <h2>Nivel da Bateria: {{bikes.batteryLevel}}</h2>  
             <h2>Peso maximo: {{bikes.pesoMax}}</h2>
@@ -25,9 +35,7 @@
             <h2>Velocidade atual: {{bikes.speed}}</h2>
           
           </div>
-          <app-widget-area fxFlex="25" fyFlex="25" ></app-widget-area>
-          <app-widget-area fxFlex="25" fyFlex="25"></app-widget-area>
-          <app-widget-area fxFlex="25" fyFlex="25"></app-widget-area>
+          <app-widget-area fxFlex="40" fyFlex="25" ></app-widget-area>
 
       </div>
    

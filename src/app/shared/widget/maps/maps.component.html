@@ -1,0 +1,4 @@
+
+<agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+    <agm-marker *ngFor="let bikes of currentBikes"  [latitude]="bikes.coordinates.coordinates(0)" [longitude]="bikes.coordinates.coordinates[0]"></agm-marker>
+  </agm-map>
