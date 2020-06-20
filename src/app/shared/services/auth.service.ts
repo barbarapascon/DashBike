@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   authUrl = "https://apitccsmartbike20200527201546.azurewebsites.net/api/account/authenticate";
  usuarioUrl="https://apitccsmartbike20200527201546.azurewebsites.net/api/user/getall";
+ usuarioCreateUrl="https://apitccsmartbike20200527201546.azurewebsites.net/api/user/create";
   helper = new JwtHelperService();
   decodedToken: any;
   currentUser: User;
@@ -59,7 +60,7 @@ export class AuthService {
     let headers = new HttpHeaders({
     });
     let options = { headers: headers };
-   //return this.http.post(this.employersUrl + "create", model, options);
+   return this.http.post(this.usuarioCreateUrl + "create", model, options);
   }
 
   resetPassword(model: any) {
