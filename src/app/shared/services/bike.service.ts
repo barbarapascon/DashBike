@@ -4,15 +4,21 @@ import { Observable, throwError } from 'rxjs';
 import { Bike } from '../models/bike';
 import { catchError, retry, map } from 'rxjs/operators';
 import { Corridas } from '../models/corridas';
+import { Historico } from '../models/historico';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BikeService {
   bikeUrl = "https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/all";
-  corridasUrl ="https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/corrida/all"
+  corridasUrl ="https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/corrida/all";
+  historicoUrl="https://apitccsmartbike20200527201546.azurewebsites.net/api/bike/obterdados";
+
+  currentUser: User; 
    bikes: Bike[];
    corridas: Corridas[];
+   historico: Historico[];
   constructor(private httpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -59,6 +65,25 @@ return this.httpClient.get<Corridas[]>(this.corridasUrl,{ headers: reqHeader })
     })
   )
   }
+
+  getHistorico(id: number): Observable<Historico[]>{
+    this.currentUser=JSON.parse(localStorage.getItem('user'));
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.currentUser.token
+   });
+      return this.httpClient.get<Historico>(this.historicoUrl + '/' + id, {headers: reqHeader})
+        .pipe( 
+          map((response: any) => {
+          const historico = response;
+          if (historico.status) {
+            localStorage.setItem("historico", JSON.stringify(historico));
+            return historico;
+          }
+        })
+        )
+    }
+  
 
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
