@@ -24,7 +24,7 @@ export class PostsComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('user'))
     
     this.currentBikes =JSON.parse(localStorage.getItem('bikes'));
-    this.currentBikes =JSON.parse(localStorage.getItem('historico'));
+    this.historico =JSON.parse(localStorage.getItem('historico'));
 
    
     //console.log(this.historico);
