@@ -4,16 +4,21 @@
       <mat-expansion-panel-header (click)="carregaHistorico(bikes.id)">
         <mat-panel-title>
           
-          {{bikes.id}}
+          <span class="material-icons" style="color: #51C3AA; padding-right: 5px;">directions_bike</span>
+         BICICLETA {{bikes.id.substring(22)}}  
+          
+           
+          
         </mat-panel-title>
         <mat-panel-description>
-         modelo: {{bikes.modelo}}   fabricante: {{bikes.fabricante}}
          
-          <span class="material-icons" style="color: #51C3AA; padding-right: 5px;">directions_bike</span>
+       Modelo: {{bikes.modelo}}                    Fabricante: {{bikes.fabricante}}
+         
         </mat-panel-description>
       </mat-expansion-panel-header>
   
-    <div style="background-color: white; padding: 3%;" fxLayoutAlign="space-between center" fxLayoutGap="10px"
+    <div style="background-color: white; padding: 3%;
+    border-radius: 4px;" fxLayoutAlign="space-between center" fxLayoutGap="10px"
       fyLayoutGap="10px" class="stats-cards">
       <div style="color:#A258C7;
               margin-left: 9px;">
@@ -35,15 +40,46 @@
             <h2>Velocidade atual: {{bikes.speed}} km/h</h2>
           
           </div>
-          <app-widget-area fxFlex="40" fyFlex="25" ></app-widget-area>
 
       </div>
-   
-  
-  
+<div style="
+margin-top: 4%;">
+
+  <h1> 
+    <span class="material-icons" style="color: #fff; padding-right: 5px;">update</span>
+    Histórico de corridas da bicicleta:</h1>
+</div>
+      <div *ngFor="let corridas of currentCorridas" >
+        <mat-accordion  *ngIf="corridas.refBike ==bikes.id" class="example-headers-align" style="background-color:white;" multi>
+          <mat-expansion-panel  style="margin-top: 25px;background-color:white;">
+            <mat-expansion-panel-header (click)="carregaHistorico(bikes.id)">
+              <ng-container *ngFor="let user of currentUsers">
+              <mat-panel-title  *ngIf="corridas.refUser ==user.id" style="    background-color: white;
+              color: #A258C7;">
+                
+                <span class="material-icons" style="color: #51C3AA; padding-right: 5px;">directions_bike</span>
+                Usuario :{{user.firstName}} 
+              </mat-panel-title>
+          
+              <mat-panel-description *ngIf="corridas.refUser ==user.id" style="    background-color: white;
+              color: #A258C7;" >
+               Desbloqueada em {{corridas.getBike}}   
+               
+              </mat-panel-description></ng-container>
+            </mat-expansion-panel-header>
+          
+          <div style="background-color: white; padding: 3%;" fxLayoutAlign="space-between center" fxLayoutGap="10px"
+            fyLayoutGap="10px" class="stats-cards">
+            <div style="color:#A258C7;
+                    margin-left: 9px;">
+                  <h2>Duracao: {{corridas.duracao}} minutos</h2>  
+                  <h2>Corrida terminada em: {{corridas.leaveBike}}</h2>  
+                
+                </div>
+      
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
     </mat-expansion-panel>
-  
-   
-  
-  
   </mat-accordion>

@@ -66,13 +66,25 @@ return this.httpClient.get<Corridas[]>(this.corridasUrl,{ headers: reqHeader })
   )
   }
 
-  getHistorico(id: number): Observable<Historico[]>{
+  getHistorico(id: number,type :string): Observable<Historico[]>{
     this.currentUser=JSON.parse(localStorage.getItem('user'));
     var reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.currentUser.token
    });
-      return this.httpClient.get<Historico>(this.historicoUrl + '/' + id, {headers: reqHeader})
+   if(type!='all'){
+    return this.httpClient.get<Historico>(this.historicoUrl + '/' + id+'/'+type, {headers: reqHeader})
+    .pipe( 
+      map((response: any) => {
+      const historico = response;
+      if (historico.status) {
+        localStorage.setItem("historico", JSON.stringify(historico));
+        return historico;
+      }
+    })
+    )}
+    else{
+return this.httpClient.get<Historico>(this.historicoUrl + '/' + id, {headers: reqHeader})
         .pipe( 
           map((response: any) => {
           const historico = response;
@@ -82,6 +94,9 @@ return this.httpClient.get<Corridas[]>(this.corridasUrl,{ headers: reqHeader })
           }
         })
         )
+    }
+   
+      
     }
   
 
