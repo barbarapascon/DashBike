@@ -21,7 +21,7 @@ export class MapsComponent implements OnInit {
     this.currentBikes =JSON.parse(localStorage.getItem('bikes'));
     if(this.currentBikes){
       this.currentBikes.forEach(element => {
-       //console.log(this.currentBikes.bikes.coordinates.coordinates(0));
+       console.log(element.coordinates.coordinates[0]);
         
       });
     }
