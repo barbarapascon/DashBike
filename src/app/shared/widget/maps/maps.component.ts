@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bike } from '../../models/bike';
+import { Corridas } from '../../models/corridas';
+import { Historico } from '../../models/historico';
 
 @Component({
   selector: 'app-maps',
@@ -9,8 +11,8 @@ import { Bike } from '../../models/bike';
 export class MapsComponent implements OnInit {
 
   texto : string = 'Wenceslau Braz - Cuidado com as cargas';
-  lat: number = -23.5489;
-  lng: number = -46.6388;
+  lat: number = -23.754423;
+  lng: number = -46.55474; 
   zoom: number = 15;
 
   constructor() { }

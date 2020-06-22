@@ -1,10 +1,10 @@
 
   <mat-accordion *ngFor="let bikes of currentBikes" class="example-headers-align" style="background-color:#A258C7;" multi>
     <mat-expansion-panel style="margin-top: 25px;background-color:#A258C7;">
-      <mat-expansion-panel-header (click)="carregaHistorico(bikes.id)">
-        <mat-panel-title>
+      <mat-expansion-panel-header style="font-family: 'Norwester', sans-serif" (click)="carregaHistorico(bikes.id)">
+        <mat-panel-title style="font-family: 'Norwester', sans-serif;size: 20px;">
           
-          <span class="material-icons" style="color: #51C3AA; padding-right: 5px;">directions_bike</span>
+          <span class="material-icons" style="color: #51C3AA; padding-right: 5px;size: 20px ;">directions_bike</span>
          BICICLETA {{bikes.id.substring(22)}}  
           
            
@@ -45,8 +45,8 @@
 <div style="
 margin-top: 4%;">
 
-  <h1> 
-    <span class="material-icons" style="color: #fff; padding-right: 5px;">update</span>
+  <h1 style="font-family: 'Norwester', sans-serif"> 
+    <span class="material-icons" style="color: #fff; padding-right: 5px; ">update</span>
     Histórico de corridas da bicicleta:</h1>
 </div>
       <div *ngFor="let corridas of currentCorridas" >
