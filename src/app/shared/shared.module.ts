@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MapsComponent } from './widget/maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AgmCoreModule } from '@agm/core';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    AgmSnazzyInfoWindowModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAqlScu6iS83TvJOZ3JSJMBZHBAPgATEzQ'
     })

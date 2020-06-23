@@ -1,5 +1,16 @@
-
-<agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng" style="
+<agm-map #agmMap [latitude]="lat" [zoom]="zoom" [longitude]="lng" style="
 background: #51c3aa;">
-    <agm-marker *ngFor="let bikes of currentBikes"  [latitude]="bikes.coordinates.coordinates[0]" [longitude]="bikes.coordinates.coordinates[1]"></agm-marker>
-  </agm-map>
+  <agm-marker *ngFor="let bikes of currentBikes" [latitude]="bikes.coordinates.coordinates[0]"
+    [longitude]="bikes.coordinates.coordinates[1]" (markerClick)="onMarkerClicked(bikes.coordinates)">
+    <agm-snazzy-info-window [maxWidth]="200" [shadow]="true" padding="12px" [latitude]="lat" [longitude]="lng"
+      backgroundColor="#fff" fontSize="12px" fontColor="#757575" wrapperClass="customClass" [showCloseButton]="false"
+      [isOpen]="true" [panOnOpen]="false" [closeWhenOthersOpen]="false" [closeOnMapClick]="false">
+    </agm-snazzy-info-window>
+    <ng-template>
+      <div>My Snazzy Info Window</div>
+    </ng-template>
+  </agm-marker>
+
+
+
+</agm-map>

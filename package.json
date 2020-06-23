@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.1.0",
+    "@agm/snazzy-info-window": "^1.1.0",
     "@angular/animations": "~9.1.9",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.9",
@@ -30,6 +31,7 @@
     "highcharts": "^8.1.2",
     "highcharts-angular": "^2.4.0",
     "rxjs": "~6.5.4",
+    "snazzy-info-window": "^1.1.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
