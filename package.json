@@ -29,7 +29,7 @@
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "highcharts": "^8.1.2",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "rxjs": "~6.5.4",
     "snazzy-info-window": "^1.1.1",
